@@ -53,7 +53,7 @@ class Recordings(ZBExtension):
 		self.ZBProxy.add_directoryItems(recordings)
 
 	def watch(self, args):
-		params = {'recording_id': args['id'], 'stream_type': 'hls5'}
+		params = {'recording_id': args['id'], 'stream_type': 'hls'}
 		resultData = self.ZapiSession.exec_zapiCall('/zapi/watch', params)
 		if resultData is not None:
 			url = resultData['stream']['url']
